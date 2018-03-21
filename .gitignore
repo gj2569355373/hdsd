@@ -6,3 +6,11 @@
 .DS_Store
 /build
 /captures
+*.json
+sinavideo_playercore_v20/build/intermediates/blame/res/androidTest/debug/multi/values.json
+*.json
+*.json
+sinavideo_playersdk_v20/build/intermediates/blame/res/release/multi/values.json
+*.json
+sinavideo_playercore_v20/build/intermediates/blame/res/androidTest/debug/multi/values.json
+sinavideo_playercore_v20/build/intermediates/blame/res/androidTest/debug/single/drawable-mdpi-v4.json

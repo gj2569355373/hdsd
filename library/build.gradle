@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        buildToolsVersion rootProject.ext.androidBuildToolsVersion
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:$rootProject.androidSupportVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.androidSupportVersion"
+    compile "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    compile "com.google.code.gson:gson:$rootProject.gsonVersion"
+    provided "javax.annotation:jsr250-api:$rootProject.javaxAnnotationVersion"
+    compile "com.android.support:design:$rootProject.androidSupportVersion"
+    compile "com.facebook.rebound:rebound:$rootProject.facebookReboundVersion"
+    compile "com.android.support:support-v4:$rootProject.androidSupportv4Version"
+    compile "com.zhy:okhttputils:$rootProject.zhyokhttpVersion"
+    compile "com.youth.banner:banner:$rootProject.bannerVersion"
+    //轮播图
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+}

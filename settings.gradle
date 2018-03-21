@@ -1,0 +1,1 @@
+include ':app', ':library', ':sinavideo_playercore_v20', ':sinavideo_playersdk_v20', ':social_sdk_library_project'

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\demo\\hdsd\\sinavideo_playersdk_v20\\build\\intermediates\\res\\merged\\debug\\raw\\libsplayer.7z",
+        "source": "D:\\demo\\hdsd\\sinavideo_playersdk_v20\\build\\intermediates\\exploded-aar\\hdsd\\sinavideo_playercore_v20\\unspecified\\res\\raw\\libsplayer.7z"
+    },
+    {
+        "merged": "D:\\demo\\hdsd\\sinavideo_playersdk_v20\\build\\intermediates\\res\\merged\\debug\\raw\\config.properties",
+        "source": "D:\\demo\\hdsd\\sinavideo_playersdk_v20\\src\\main\\res\\raw\\config.properties"
+    },
+    {
+        "merged": "D:\\wordvideo\\sinavideo_playersdk_v20\\build\\intermediates\\res\\merged\\debug\\raw\\config.properties",
+        "source": "D:\\wordvideo\\sinavideo_playersdk_v20\\src\\main\\res\\raw\\config.properties"
+    },
+    {
+        "merged": "D:\\wordvideo\\sinavideo_playersdk_v20\\build\\intermediates\\res\\merged\\debug\\raw\\libsplayer.7z",
+        "source": "D:\\wordvideo\\sinavideo_playersdk_v20\\build\\intermediates\\exploded-aar\\wordvideo\\sinavideo_playercore_v20\\unspecified\\res\\raw\\libsplayer.7z"
+    }
+]

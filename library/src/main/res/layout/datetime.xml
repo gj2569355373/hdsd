@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:paddingTop="10dp"
+   android:paddingBottom="10dp"
+    android:orientation="horizontal" >
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日期" />
+
+        <DatePicker
+            
+            android:id="@+id/datePickerStart"
+            android:layout_width="match_parent"
+            style="@style/testStyle"
+            android:layout_height="match_parent"
+            android:calendarViewShown="false" />
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间" />
+
+        <TimePicker
+              style="@style/testStyle"
+            android:id="@+id/TimePickerStart"
+           android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+    </LinearLayout>
+
+</LinearLayout>

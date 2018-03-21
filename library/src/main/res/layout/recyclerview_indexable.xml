@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.zchd.library.indexrecycler.LetterBar
+        android:id="@+id/letter_bar"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_alignParentRight="true"
+        android:background="@color/white"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        app:textColor="#8B8B83"
+        app:textSize="15sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/letter_bar"/>
+
+    <TextView
+        android:id="@+id/tip_text"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="25sp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:background="@drawable/tip_text_background"/>
+</RelativeLayout>

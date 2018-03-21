@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null" >
+
+    <LinearLayout
+        android:id="@+id/camera_video_line"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#44000000"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="10dp" >
+
+        <Button
+            android:id="@+id/take_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.9"
+            android:background="@drawable/topcir"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="拍照"
+            
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/pic_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="1dp"
+            android:alpha="0.9"
+            android:background="@drawable/bottomcir"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="相册"
+           
+           android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:alpha="0.9"
+            android:background="@drawable/rectanglecirnostroke"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="取消"
+            android:textColor="#285564"
+           android:textSize="17sp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="gray">#ffaaaaaa</color>
+    <color name="bottomPopupWindowSizeColor">#217e7e</color>
+    <color name="clickcolorhui">#C1CDC1</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="aliwx_white">#ffffff</color>
+    <color name="aliwx_text_color_gray">#bebec0</color>
+    <color name="vifrification">#00000000</color>
+    <color name="xuanzhon">#1AADE9</color>
+    <!--DragGridView-->
+    <color name="gap_line">#e2e2e2</color>
+    <color name="item_bg">#e5e5e5</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_777572">#777572</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_half">#23000000</color>
+    <color name="orange_ff6633">#ff6633</color>
+    <color name="status_bar">#37363a</color>
+    <color name="c676767">#676767</color>
+    <!--DragGridView-->
+</resources>

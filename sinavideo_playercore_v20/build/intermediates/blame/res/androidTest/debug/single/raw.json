@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\demo\\hdsd\\sinavideo_playercore_v20\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\libsplayer.7z",
+        "source": "D:\\demo\\hdsd\\sinavideo_playercore_v20\\build\\intermediates\\bundles\\debug\\res\\raw\\libsplayer.7z"
+    },
+    {
+        "merged": "D:\\wordvideo\\sinavideo_playercore_v20\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\libsplayer.7z",
+        "source": "D:\\wordvideo\\sinavideo_playercore_v20\\build\\intermediates\\bundles\\debug\\res\\raw\\libsplayer.7z"
+    }
+]

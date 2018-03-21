@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.bugtags.library.plugin'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+    sourceSets.main.jniLibs.srcDirs = ['libs']
+    dataBinding {
+        enabled true
+    }
+    defaultConfig {
+        applicationId "com.zchd.hdsd"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true;
+        dexOptions{
+            incremental true
+            javaMaxHeapSize "4g"
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "6f62d5fe2defc84af68f784a", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+
+    buildTypes {
+        debug {
+        }
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true   //混淆
+            zipAlignEnabled true   //Zipalign优化
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        // set to true to turn off analysis progress reporting by lint
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+//bugtags自动上传插件
+bugtags {
+    //这里是你的 appKey
+    appKey "XXX"
+    //这里是你的 appSecret，管理员在设置页可以查看
+    appSecret "XXX"
+    trackingNetworkEnabled false //开启网络请求跟踪功能(企业版)
+}
+dependencies {
+    compile fileTree(include: '*.jar', exclude: 'android-support-*.jar', dir: 'libs')
+    compile project(':library')
+    compile project(':sinavideo_playersdk_v20')
+    compile project(':social_sdk_library_project')
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile "com.android.support:cardview-v7:$rootProject.androidSupportVersion"
+    compile "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    apt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+    compile "com.google.dagger:dagger:$rootProject.dagger2Version"
+    apt "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    compile "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.SmartRefreshLayoutV"
+    compile "com.gyf.barlibrary:barlibrary:$rootProject.barlibraryVersion"
+
+
+}

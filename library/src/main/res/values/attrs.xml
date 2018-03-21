@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="SpinKitViewStyle" format="reference" />
+    <declare-styleable name="BottomNavigationBar">
+        <attr name="bnbElevation" format="dimension" />
+        <attr name="bnbActiveColor" format="color" />
+        <attr name="bnbInactiveColor" format="color" />
+        <attr name="bnbBackgroundColor" format="color" />
+        <attr name="bnbAnimationDuration" format="integer" />
+        <attr name="bnbMode" format="enum">
+            <enum name="mode_default" value="0" />
+            <enum name="mode_fixed" value="1" />
+            <enum name="mode_shifting" value="2" />
+        </attr>
+        <attr name="bnbBackgroundStyle" format="enum">
+            <enum name="background_style_default" value="0" />
+            <enum name="background_style_static" value="1" />
+            <enum name="background_style_ripple" value="2" />
+        </attr>
+        <attr name="bnbAutoHideEnabled" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="LabelTextView">
+        <attr name="angle" format="integer"/>
+        <attr name="normalColor" format="color|reference"/>
+        <attr name="pressColor" format="color|reference"/>
+    </declare-styleable>
+    <!--圆形头像border_width=0为圆形，其他为圆角，border_color背景颜色-->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+</resources>

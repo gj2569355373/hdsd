@@ -1,0 +1,63 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.3'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'//Lambda
+        classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'//Lambda
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    //Android
+    androidBuildToolsVersion = '24.0.1'
+    androidMinSdkVersion = 17
+    androidTargetSdkVersion = 24
+    androidCompileSdkVersion = 24
+    androidSupportVersion = '24.0.+'
+    androidSupportv4Version='24.1.1'
+
+
+    //Libraries
+    rxjava='2.1.0'
+    rxandroid='2.0.1'
+    dagger2Version = '2.4'
+    butterKnifeVersion = '8.2.1'
+    zhyokhttpVersion= '2.6.2'
+    glideVersion = '3.7.0'
+    javaxAnnotationVersion = '1.0'
+    gsonVersion = '2.7'
+    bugtagsLibrary = '1.3.0'
+    facebookReboundVersion = '0.3.8'
+    //test
+    junitTestVersion = '4.12'
+    mockitoTestVersion = '1.10.19'
+    //lib
+    bannerVersion='1.4.7'
+    barlibraryVersion='2.3.0'
+    recyclerviewswipeVersion='1.0.2'
+    swipeToLoadLayoutVersion='1.0.3'
+    toastyV='1.2.8'
+    SmartRefreshLayoutV='1.1.0-alpha-1'
+
+    jpushVersion='3.0.1'
+    jcoreVersion='1.1.0'
+}

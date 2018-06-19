@@ -5,6 +5,7 @@ import android.telephony.TelephonyManager;
 
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 import com.zchd.hdsd.business.component.ActivityComponent;
 import com.zchd.hdsd.business.component.AppComponent;
 import com.zchd.hdsd.business.component.DaggerAppComponent;
@@ -19,20 +20,20 @@ import base.IcssApplication;
  */
 public class HdsdApplication extends IcssApplication {
     private static int AvailableHight=0;
-    private String wechat_braodcast_type;
     public static  String mobile;
+    public static boolean login=false;
     public static String hasUnRead = "0";
     public static  String token="";//锟街伙拷锟斤拷锟斤拷
-    public static  String password;//锟街伙拷锟斤拷锟斤拷
     public static  String TelephonyMgr="";
     public static  String qqName="";
     public static  String weixinName="";
-    public static  String courseId="";
     public static  String weiboName="";
     public static  String avatar="";//头像路径
     public static  String nickname="";//name
     public static  String id="";//id
-    private SharedPreferences_operate operate;
+    public boolean userType=false;
+    public boolean unReadNotice=false;
+//    private SharedPreferences_operate operate;
     //activity组件
     private ActivityComponent activityComponent;
     //application组件
@@ -42,16 +43,22 @@ public class HdsdApplication extends IcssApplication {
         super.onCreate();
         inits();
         Bugtags.start(AppConfig.BUGTAGS_KEY, this, Bugtags.BTGInvocationEventNone,bugtags()); //bugtags key
+        ZXingLibrary.initDisplayOpinion(this);
+    }
+    public static HdsdApplication getInstance() {
+        return (HdsdApplication) context;
     }
     public static HdsdApplication get(Context context) {
         return (HdsdApplication) context.getApplicationContext();
     }
     private void inits() {
         // TODO Auto-generated method stub
-        operate = new SharedPreferences_operate("login", this);
-        token = operate.getString("token" );
-        mobile = operate.getString("username");
-        password = operate.getString("password");
+//        operate = new SharedPreferences_operate("login", this);
+//        if ( operate.getint("islogin")==1) {
+//            token = operate.getString("token");
+//            mobile = operate.getString("username");
+//            id = operate.getString("id");
+//        }
         TelephonyManager TelephonyMgrs = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
         TelephonyMgr = TelephonyMgrs.getDeviceId();
     }
@@ -81,12 +88,7 @@ public class HdsdApplication extends IcssApplication {
                 build();
         return options;
     }
-    public void setWechat_braodcast_type(String wechat_braodcast_type) {
-        this.wechat_braodcast_type = wechat_braodcast_type;
-    }
-    public String getWechat_braodcast_type() {
-        return wechat_braodcast_type;
-    }
+
     public static int getAvailableHight() {
         return AvailableHight;
     }
@@ -106,4 +108,5 @@ public class HdsdApplication extends IcssApplication {
     private void initAppComponent() {
         this.appComponent = DaggerAppComponent.create();
     }
+
 }

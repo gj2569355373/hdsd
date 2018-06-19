@@ -205,3 +205,32 @@
 -keepclassmembers class rx.** { *; }
 # retrolambda
 -dontwarn java.lang.invoke.*
+
+# banner 的混淆代码
+-keep class com.youth.banner.** {
+    *;
+ }
+
+-keep class com.sina.sinavideo.**{
+    *;
+}
+
+#友盟
+-keep class com.umeng.** {*;}
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep class com.tencent.** {
+   *;
+}
+-keep class com.sina.weibo.sdk.** { *; }
+
+-keepclasseswithmembers class android.support.v7.widget.RecyclerView$ViewHolder {
+   public final View *;
+}
+-dontwarn com.yanzhenjie.recyclerview.swipe.**
+-keep class com.yanzhenjie.recyclerview.swipe.** {*;}

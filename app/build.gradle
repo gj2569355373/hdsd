@@ -8,6 +8,7 @@ android {
     compileSdkVersion rootProject.ext.androidCompileSdkVersion
     buildToolsVersion rootProject.ext.androidBuildToolsVersion
     sourceSets.main.jniLibs.srcDirs = ['libs']
+
     dataBinding {
         enabled true
     }
@@ -17,12 +18,17 @@ android {
         targetSdkVersion rootProject.ext.androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true;
+        multiDexEnabled true
+        ndk {
+            // 设置支持的 SO 库构架，一般而言，取你所有的库支持的构架的`交集`。
+            abiFilters 'armeabi', 'x86'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
         dexOptions{
             incremental true
             javaMaxHeapSize "4g"
         }
         manifestPlaceholders = [
+                qqappid:"1106730433",
                 JPUSH_PKGNAME : applicationId,
                 JPUSH_APPKEY : "6f62d5fe2defc84af68f784a", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
@@ -31,12 +37,14 @@ android {
 
     buildTypes {
         debug {
+            minifyEnabled true   //混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             // 不显示Log
             buildConfigField "boolean", "LOG_DEBUG", "false"
             minifyEnabled true   //混淆
-            zipAlignEnabled true   //Zipalign优化
+            zipAlignEnabled false   //Zipalign优化
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -52,13 +60,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    signingConfigs {
+        debug {
+            storeFile file('hdsd.jks')
+            storePassword "hdsd2018"
+            keyAlias "hdsd"
+            keyPassword "hdsd2018"
+        }
+    }
 }
 //bugtags自动上传插件
 bugtags {
     //这里是你的 appKey
-    appKey "XXX"
+    appKey "4734f4148e104ec1970cc5dd0ddf38b5"
     //这里是你的 appSecret，管理员在设置页可以查看
-    appSecret "XXX"
+    appSecret "bcb74b2abc0fa1e997247e94d26b733f"
     trackingNetworkEnabled false //开启网络请求跟踪功能(企业版)
 }
 dependencies {
@@ -67,7 +83,13 @@ dependencies {
     compile project(':library')
     compile project(':sinavideo_playersdk_v20')
     compile project(':social_sdk_library_project')
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile project(':cameralibrarys')
+    compile files('libs/alipaySdk-20161009.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/json-simple-1.1.1.jar')
+    compile files('libs/volley.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile 'com.bugtags.metrics:bugtags-lib:latest.integration'
     compile "com.android.support:cardview-v7:$rootProject.androidSupportVersion"
     compile "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
     apt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
@@ -75,6 +97,16 @@ dependencies {
     apt "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
     compile "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.SmartRefreshLayoutV"
     compile "com.gyf.barlibrary:barlibrary:$rootProject.barlibraryVersion"
-
+    compile "com.github.LuckSiege.PictureSelector:picture_library:$rootProject.pictureSelector"
+    compile "com.yanzhenjie:recyclerview-swipe:$rootProject.recyclerviewswipeVersion"
+    compile "cn.yipianfengye.android:zxing-library:$rootProject.zxinglibrary"
+    compile 'jp.wasabeef:glide-transformations:3.1.1'
+    compile 'com.yanzhenjie:permission:2.0.0-rc4'
+    compile 'com.hyman:flowlayout-lib:1.1.2'
+    compile 'com.github.arcadefire:nice-spinner:1.3.1'
+    compile 'com.githang:status-bar-compat:0.7'
+    compile 'com.youth.banner:banner:1.4.10'
+    compile 'net.the4thdimension:audio-wife:1.0.3'
+    compile 'com.github.GrenderG:Toasty:1.3.0'
 
 }

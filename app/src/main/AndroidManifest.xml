@@ -1,13 +1,328 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
     package="com.zchd.hdsd">
 
     <application
+        android:name=".HdsdApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".simpleactivity.SplashActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zchd.hdsd.business.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity
+            android:name=".business.camera.CapturesActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".simpleactivity.RegisterActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.CountryActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".business.mall.SeachActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.FreeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".simpleactivity.CourseScActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.match.MatchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.mall.MallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.play.AudioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.play.CourseAudioActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.match.MatchDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.match.MatchBmActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".simpleactivity.StartActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".business.camera.CameraActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="droid.Activity01"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".simpleactivity.GeRenZiLiaoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".business.teacher.TeacherAllActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".simpleactivity.GuideRegisterActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.HomeworkDescActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.HomeworkUploadActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".business.match.MyMacthActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".business.teacher.TeacherActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".simpleactivity.LearningClassActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.LogisticsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+
+        <activity
+            android:name=".business.course.CourseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".business.course.CourseAllActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.CourseEvaluateActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".business.learnCourse.LearnCourseActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".simpleactivity.MallDetailsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.NewsDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.NewsDetailListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.NewsListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.OrderActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.OrderConfirmActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.OrderdetailsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.PasswordResetActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.PaymentCompletedActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.PinglunActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.PlayLiShiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.PullZikechengActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.QueRenShouHuoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.SchoolActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.SetActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.ShouHuoXinXiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.SimpleTestActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"  >
+        </activity>
+        <activity
+            android:name=".business.play.PlayActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"  >
+        </activity>
+
+        <activity
+            android:name=".business.play.PictureActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".simpleactivity.WangJiMiMaActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".simpleactivity.WebviewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.XxjlActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.YiJianFanKuiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".simpleactivity.ZengjiaDizhiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+
+        <!-- 支付宝支付 -->
+        <!--<activity android:name="com.alipay.sdk.app.H5PayActivity"-->
+            <!--android:configChanges="orientation|keyboardHidden|navigation"-->
+            <!--android:exported="false"-->
+            <!--android:screenOrientation="behind" />-->
+
+        <!--<activity android:name="com.alipay.sdk.auth.AuthActivity"-->
+            <!--android:configChanges="orientation|keyboardHidden|navigation"-->
+            <!--android:exported="false"-->
+            <!--android:screenOrientation="behind" />-->
+
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <!-- 友盟社会化分享 -->
+        <!--<activity-->
+            <!--android:name="com.umeng.socialize.editorpage.ShareActivity"-->
+            <!--android:excludeFromRecents="true"-->
+            <!--android:theme="@style/Theme.UMDefault" />-->
+
+        <!--<meta-data-->
+            <!--android:name="UMENG_APPKEY"-->
+            <!--android:value="5af8ff18b27b0a2aaf00002b" >-->
+        <!--</meta-data>-->
+
+        <!-- 微博 -->
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="false"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            >
+
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:launchMode="singleTask"
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <!-- 微信 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- QQ -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
     </application>
     <!-- 操作相机的权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -33,15 +348,14 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 读取外部SD卡 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_LOGS" />
@@ -56,4 +370,5 @@
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-feature android:name="android.hardware.flash"/>
     <uses-feature android:name="android.hardware.camera.front"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
 </manifest>

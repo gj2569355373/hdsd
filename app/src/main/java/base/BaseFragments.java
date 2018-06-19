@@ -1,8 +1,10 @@
 package base;
 
+import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +12,15 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.MultiTransformation;
 
 import butterknife.ButterKnife;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
+import com.bumptech.glide.request.RequestOptions;
+import com.zchd.hdsd.tool.DisplayUtil;
+
 import com.zchd.library.network.http.IcssOkhttp;
-import com.zchd.library.widget.CircleTransform;
 
 /**
  * Created by GJ on 2016/11/7.
@@ -23,6 +29,7 @@ abstract public class BaseFragments extends Fragment {
     protected View view=null;
     public IcssOkhttp icssOkhttp;
     private boolean BiaoJ=true;
+    private ProgressDialog dialog=null;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -81,7 +88,7 @@ abstract public class BaseFragments extends Fragment {
     @Override
     public void onDestroy() {
         // TODO Auto-generated method stub
-        icssOkhttp.clear(this);
+        icssOkhttp.clear(getActivity());
         super.onDestroy();
 //        VcodeApplication.getRefWatcher(getActivity()).watch(this);
     }
@@ -106,17 +113,47 @@ abstract public class BaseFragments extends Fragment {
     public void showLongToast(String message) {
         Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
-    /*
-  * 加载圆形图片
-  *
-  * */
-    public void GlideRound(String path, ImageView imageView)
-    {
+    public void GlideRound(int path, ImageView imageView) {
         Glide.with(this).load(path)
-                .centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL)
-                .transform(new CircleTransform(getActivity()))
-                .crossFade()
+                .apply(new RequestOptions().circleCrop())
                 .into(imageView);
     }
 
+    /*
+       * 加载圆形图片
+       *
+       * */
+    public void GlideRound(String path, ImageView imageView) {
+        Glide.with(this).load(path)
+                .apply(new RequestOptions().circleCrop())
+                .into(imageView);
+    }
+
+    public void GlideRound(String path, ImageView imageView, int err) {
+        Glide.with(this).load((path == "" || path == null) ? err : path)
+                .apply(new RequestOptions().circleCrop())
+                .into(imageView);
+    }
+    public void GlideRoundDP(String path, ImageView imageView,int dp)
+    {
+        MultiTransformation multi = new MultiTransformation(
+                new RoundedCornersTransformation(DisplayUtil.dip2px(getContext(),dp), 0, RoundedCornersTransformation.CornerType.ALL));
+        Glide.with(this).load(path)
+                .apply(new RequestOptions().centerCrop().bitmapTransform(multi))
+                .into(imageView);
+    }
+    public void showProgressDialog(String dialogtext){
+        if (dialog!=null) {
+//            dialog.dismiss();
+//            dialog=null;
+        }
+        else
+            dialog = ProgressDialog.show(getActivity(), "",dialogtext,false,false);
+    }
+    public void dimssProgressDialog(){
+        if (dialog!=null) {
+            dialog.dismiss();
+            dialog=null;
+        }
+    }
 }
